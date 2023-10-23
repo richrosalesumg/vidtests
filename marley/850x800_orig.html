@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      background:#111;
+    }
+    .container {
+      max-width:1440px;
+      margin:0 auto;
+    }
+    video {
+      width:100%;
+      max-width:100%;
+      height:auto;
+      cursor: pointer;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <video id="myMovie">
+        <source src="850x800_orig.mp4"/>
+      </video>
+    </div>
+  </body>
+  <script>
+   function loadVideo(){
+    myMovie=document.getElementById('myMovie');
+    myMovie.addEventListener('click', playOrPause, false);
+  }
+  function playOrPause() {
+      if (!myMovie.paused && !myMovie.ended){
+          myMovie.pause();
+      } else {
+          myMovie.play();
+      }
+  }
+  window.addEventListener('load',loadVideo,false);
+  </script>
+</html>
